@@ -90,6 +90,7 @@ public class AppleMonitor {
             JSONObject responseJsonObject;
             try (HttpResponse httpResponse = HttpRequest.get(url).header(headers).execute()) {
                 if (!httpResponse.isOk()) {
+                    log.error("监控请求失败！状态码：{}，响应体：{}", httpResponse.getStatus(), httpResponse.body());
                     log.info("请求过于频繁，请调整cronExpressions，建议您参考推荐的cron表达式");
                     return;
                 }
