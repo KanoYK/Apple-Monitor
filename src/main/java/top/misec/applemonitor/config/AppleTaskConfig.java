@@ -24,9 +24,10 @@ public class AppleTaskConfig {
     public String country;
     public String cookie; // 添加 cookie 字段
 
-    public String getCookie() {
-        log.info("cookie已填写");
-        return false;
+    public boolean getCookie() {
+        if (StrUtil.isEmpty(cookie)) {
+            log.info("需要cookie");
+            return false;
     }
     
     public boolean valid() {
