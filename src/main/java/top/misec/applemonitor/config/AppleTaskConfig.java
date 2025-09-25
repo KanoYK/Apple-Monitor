@@ -22,7 +22,13 @@ public class AppleTaskConfig {
     public String location;
     public String cronExpressions;
     public String country;
+    public String cookie; // 添加 cookie 字段
 
+    public String getCookie() {
+        log.info("cookie已填写");
+        return false;
+    }
+    
     public boolean valid() {
         if (CollectionUtil.isEmpty(deviceCodeList)) {
             log.info("需要监控的设备型号号码不能为空，类似于 MQ0D3CH/A ");
