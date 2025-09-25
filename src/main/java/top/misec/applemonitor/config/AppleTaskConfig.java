@@ -24,8 +24,13 @@ public class AppleTaskConfig {
     public String country;
     public String cookie; // 添加 cookie 字段
 
-    public String getCookie() {
-        return this.cookie;
+    public String getCookie() { // 修改返回类型为 String
+        if (StrUtil.isEmpty(cookie)) {
+            log.info("需要cookie");
+            // 如果 cookie 为空，根据你的业务逻辑，可以选择返回 null 或者一个空字符串
+            return null; // 或者 return "";
+        }
+        return cookie; // 如果 cookie 不为空，返回实际的 cookie 字符串
     }
     
     public boolean valid() {
