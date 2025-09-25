@@ -24,14 +24,9 @@ public class AppleTaskConfig {
     public String country;
     public String cookie; // 添加 cookie 字段
 
-    public boolean getCookie() {
-        if (StrUtil.isEmpty(cookie)) {
-            log.info("需要cookie");
-            return false;
-        }        
-        return true;
-    } 
-
+    public String getCookie() {
+        return this.cookie;
+    }
     
     public boolean valid() {
         if (CollectionUtil.isEmpty(deviceCodeList)) {
