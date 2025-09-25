@@ -207,7 +207,7 @@ public class AppleMonitor {
 
         Map<String, List<String>> headers = new HashMap<>(10);
         headers.put(Header.REFERER.getValue(), referer);
-        headers.put("cookie", Arrays.asList(CONFIG.getAppleTaskConfig().getCookie()));
+
         return headers;
     }
 }
