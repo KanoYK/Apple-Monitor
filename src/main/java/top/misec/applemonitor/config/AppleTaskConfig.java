@@ -28,7 +28,10 @@ public class AppleTaskConfig {
         if (StrUtil.isEmpty(cookie)) {
             log.info("需要cookie");
             return false;
-    }
+        }        
+        return true;
+    } 
+
     
     public boolean valid() {
         if (CollectionUtil.isEmpty(deviceCodeList)) {
